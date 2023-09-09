@@ -10,17 +10,37 @@ import org.openqa.selenium.support.ui.FluentWait;
 import java.time.Duration;
 
 public class PageWaits {
-    private FluentWait<WebDriver> waitForElement(WebDriver driver){
+    private static PageWaits pageWaits = null;
+    private WebDriver driver = null;
+
+    private PageWaits(WebDriver driver) {
+        this.driver = driver;
+    }
+    public static PageWaits getPageWaitsObject(WebDriver driver){
+        if(PageWaits.pageWaits == null){
+            PageWaits.pageWaits = new PageWaits(driver);
+        }
+        return PageWaits.pageWaits;
+    }
+
+    private FluentWait<WebDriver> waitForElement(){
         return new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(NoSuchElementException.class);
     }
-    public WebElement waitUntilElementFound(WebDriver driver, By by){
-       return waitForElement(driver).until(ExpectedConditions.visibilityOfElementLocated(by));
+    public WebElement waitUntilElementFoundByPartialLink(String partialLink){
+       return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText(partialLink)));
     }
-    public WebElement findTheElement(WebDriver driver,By by){
-        return driver.findElement(by);
+    public WebElement waitUntilElementFoundByID(String elementID){
+       return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.id(elementID)));
     }
+    public WebElement waitUntilElementFoundByCSS(String cssLocator){
+       return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssLocator)));
+    }
+    public WebElement waitUntilElementFoundByClass(String classNameElement){
+       return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.className(classNameElement)));
+    }
+
 
 }

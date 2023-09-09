@@ -10,24 +10,37 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class DriverCreator {
-    public static WebDriver createDriver(String browser) {
+
+    private static WebDriver driver = null;
+
+    private DriverCreator(String browser) {
         switch (browser.toLowerCase()) {
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
-                return new FirefoxDriver();
+                DriverCreator.driver =  new FirefoxDriver();
+                break;
             case "safari":
                 WebDriverManager.safaridriver().setup();
-                return new SafariDriver();
+                DriverCreator.driver =   new SafariDriver();
+                break;
             case "chrome":
                 WebDriverManager.chromedriver().setup();
-                return new ChromeDriver();
+                DriverCreator.driver =   new ChromeDriver();
+                break;
             default:
-                return createDefaultBrowser();
+                DriverCreator.driver =   createDefaultBrowser();
         }
     }
 
+    public static WebDriver instantiateDriver(String browser){
+        if(driver == null){
+         new DriverCreator(browser);
+        }
+        return DriverCreator.driver;
+    }
+
     public static WebDriver createDefaultBrowser() {
-        WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        return new FirefoxDriver();
     }
 }

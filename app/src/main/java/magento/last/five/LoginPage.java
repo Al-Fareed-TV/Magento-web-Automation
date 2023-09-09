@@ -3,8 +3,8 @@
  */
 package magento.last.five;
 
+import actions.FindElements;
 import actions.PageActions;
-import driver.DriverCreator;
 import driver.PageWaits;
 import org.openqa.selenium.By;
 import data.Credentials;
@@ -15,31 +15,34 @@ import static org.openqa.selenium.By.*;
 
 
 public class LoginPage {
+    private WebDriver driver = null;
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public void login() {
 
-//        1.Arrange
-        String browser = "firefox";
-        WebDriver driver = DriverCreator.createDriver(browser);
-        PageActions action = new PageActions();
-        PageWaits pageWaits = new PageWaits();
+        PageActions action = PageActions.getActionsObject();
+        PageWaits pageWaits = PageWaits.getPageWaitsObject(driver);
+        FindElements findElements = FindElements.getInstance(driver);
+
         String url = "https://magento.softwaretestingboard.com/";
-//        2.Act
+
         action.Maximize(driver);
         action.navigateTo(driver,url);
-        By signInButton = partialLinkText("Sign In");
-        WebElement signInElement = pageWaits.waitUntilElementFound(driver, signInButton);
+
+        String signInButton = "Sign In";
+        WebElement signInElement = pageWaits.waitUntilElementFoundByPartialLink(signInButton);
         action.clickElement(signInElement);
 
-        By emailId = id("email");
-        WebElement emailElement = pageWaits.waitUntilElementFound(driver, emailId);
+        String emailId = "email";
+        WebElement emailElement = pageWaits.waitUntilElementFoundByID( emailId);
         action.enterKeys(emailElement, Credentials.emailId());
 
-        By passwordId = id("pass");
-        WebElement passwordElement = pageWaits.waitUntilElementFound(driver, passwordId);
-        action.enterKeys(passwordElement,Credentials.password());
+        WebElement password = findElements.findElementByID("pass");
+        action.enterKeys(password,Credentials.password());
 
-        By submitButton = className("primary");
-        WebElement submitButtonElement = pageWaits.findTheElement(driver, submitButton);
+        WebElement submitButtonElement = findElements.findElementByClass("primary");
         action.clickElement(submitButtonElement);
 
     }
