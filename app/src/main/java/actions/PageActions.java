@@ -1,6 +1,7 @@
 package actions;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -20,9 +21,12 @@ public class PageActions {
         element.click();
     }
 
-    public void enterKeys(WebElement element, String values) {
+    public void type(WebElement element, String values) {
         element.clear();
         element.sendKeys(values);
+    }
+    public void enterKey(WebElement element){
+        element.sendKeys(Keys.ENTER);
     }
 
     public void Maximize(WebDriver driver) {

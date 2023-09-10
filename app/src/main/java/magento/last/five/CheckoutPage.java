@@ -24,10 +24,10 @@ public class CheckoutPage {
     public void fillShippingAddress(){
         proceedToCheckout();
         WebElement address = pageWaits.waitUntilElementFoundByXPath("//*[@id=\"N0NK716\"]");
-        action.enterKeys(address,"any address");
+        action.type(address,"any address");
 
         WebElement city = elements.findElementByXPath("//*[@id=\"N1UKLMU\"]");
-        action.enterKeys(city,"Bangalore");
+        action.type(city,"Bangalore");
 
         WebElement countriesDropdown = elements.findElementByXPath("//*[@id=\"B3RO8S2\"]");
         Select dropdown = new Select(countriesDropdown);

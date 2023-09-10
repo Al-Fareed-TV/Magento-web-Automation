@@ -48,7 +48,7 @@ public class OrderProduct {
         action.clickElement(productSize);
 
         WebElement qtyElement = elements.findElementByID("qty");
-        action.enterKeys(qtyElement, "2");
+        action.type(qtyElement, "2");
 
         WebElement colorElement = elements.findElementByCSS("#option-label-color-93-item-52");
         action.clickElement(colorElement);

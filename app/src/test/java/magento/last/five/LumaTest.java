@@ -57,6 +57,13 @@ public class LumaTest{
         int countOfItemsInWishList = wishList.verifyWishList();
         Assert.assertEquals(countOfItemsInWishList,1);
     }
+    @Test
+    public void testSearchProduct(){
+        loginTest();
+        SearchProduct searchProduct = new SearchProduct(driver);
+        int countOfListedProducts = searchProduct.verifyListOfSearchElements("shirt");
+        Assert.assertEquals(countOfListedProducts,5);
+    }
 
     @AfterClass
     public void tearDown() throws InterruptedException {

@@ -6,12 +6,9 @@ package magento.last.five;
 import actions.FindElements;
 import actions.PageActions;
 import driver.PageWaits;
-import org.openqa.selenium.By;
 import data.Credentials;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import static org.openqa.selenium.By.*;
 
 
 public class LoginPage {
@@ -37,10 +34,10 @@ public class LoginPage {
 
         String emailId = "email";
         WebElement emailElement = pageWaits.waitUntilElementFoundByID( emailId);
-        action.enterKeys(emailElement, Credentials.emailId());
+        action.type(emailElement, Credentials.emailId());
 
         WebElement password = findElements.findElementByID("pass");
-        action.enterKeys(password,Credentials.password());
+        action.type(password,Credentials.password());
 
         WebElement submitButtonElement = findElements.findElementByClass("primary");
         action.clickElement(submitButtonElement);
