@@ -38,6 +38,10 @@ public class PageWaits {
     public WebElement waitUntilElementFoundByCSS(String cssLocator){
        return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssLocator)));
     }
+    public WebElement waitUntilElementFoundByXPath(String xpath){
+       return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+    }
+
     public WebElement waitUntilElementFoundByClass(String classNameElement){
        return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.className(classNameElement)));
     }

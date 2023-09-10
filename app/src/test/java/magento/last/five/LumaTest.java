@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import static java.lang.Thread.sleep;
 
-public class LumaTest {
+public class LumaTest{
     private WebDriver driver = null;
 
     @BeforeClass
@@ -42,6 +42,13 @@ public class LumaTest {
         int count = confirmOrder.checkCart();
         System.out.println("Present count of cart : " + count);
         Assert.assertEquals(count, (initialCountOfCart + 2));
+    }
+
+    @Test
+    public void testCheckout()throws InterruptedException{
+        verifyCount();
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        checkoutPage.fillShippingAddress();
     }
 
     @AfterClass

@@ -21,7 +21,7 @@ public class ConfirmOrder {
 
     public int checkCart() throws InterruptedException {
         WebElement cartButton = elements.findElementByCSS("body > div.page-wrapper > header > div.header.content > div.minicart-wrapper > a > span.counter.qty");
-        sleep(2000);
+        sleep(4000);
         action.clickElement(cartButton);
         pageWaits.waitUntilElementFoundByCSS("#ui-id-1");
         String itemCount = pageWaits.waitUntilElementFoundByCSS("#minicart-content-wrapper > div.block-content > div.items-total > span.count").getText();
