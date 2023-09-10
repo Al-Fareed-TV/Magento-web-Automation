@@ -45,10 +45,17 @@ public class LumaTest{
     }
 
     @Test
-    public void testCheckout()throws InterruptedException{
+    public void testCheckoutPage()throws InterruptedException{
         verifyCount();
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.fillShippingAddress();
+    }
+    @Test
+    public void testWishListPage(){
+        loginTest();
+        WishList wishList = new WishList(driver);
+        int countOfItemsInWishList = wishList.verifyWishList();
+        Assert.assertEquals(countOfItemsInWishList,1);
     }
 
     @AfterClass

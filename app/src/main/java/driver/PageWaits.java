@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class PageWaits {
     private static PageWaits pageWaits = null;
@@ -38,11 +39,14 @@ public class PageWaits {
     public WebElement waitUntilElementFoundByCSS(String cssLocator){
        return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssLocator)));
     }
+    public List<WebElement> waitUntilListOfElementFoundByCss(String cssLocator){
+       return waitForElement().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(cssLocator)));
+    }
     public WebElement waitUntilElementFoundByXPath(String xpath){
        return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
     }
 
-    public WebElement waitUntilElementFoundByClass(String classNameElement){
-       return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.className(classNameElement)));
+    public Boolean waitForTitleToBeChanged(String titleName){
+       return waitForElement().until(ExpectedConditions.titleIs(titleName));
     }
 }
