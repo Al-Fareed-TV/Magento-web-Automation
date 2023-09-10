@@ -41,6 +41,4 @@ public class PageWaits {
     public WebElement waitUntilElementFoundByClass(String classNameElement){
        return waitForElement().until(ExpectedConditions.visibilityOfElementLocated(By.className(classNameElement)));
     }
-
-
 }

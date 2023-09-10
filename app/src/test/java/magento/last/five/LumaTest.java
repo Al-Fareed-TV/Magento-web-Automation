@@ -5,6 +5,7 @@ package magento.last.five;
 
 import driver.DriverCreator;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -21,21 +22,31 @@ public class LumaTest {
     }
 
     @Test
-    public void shouldLogin() {
+    public void loginTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login();
     }
 
     @Test
-    public void AddToCart(){
-        shouldLogin();
+    public int addToCartTest() {
+        loginTest();
         OrderProduct order = new OrderProduct(driver);
-        order.AddToCart();
+        return order.AddToCart();
+    }
+
+    @Test
+    public void verifyCount() throws InterruptedException {
+        int initialCountOfCart = addToCartTest();
+        System.out.println("Initial count : " + initialCountOfCart);
+        ConfirmOrder confirmOrder = new ConfirmOrder(driver);
+        int count = confirmOrder.checkCart();
+        System.out.println("Present count of cart : " + count);
+        Assert.assertEquals(count, (initialCountOfCart + 2));
     }
 
     @AfterClass
     public void tearDown() throws InterruptedException {
-        sleep(2500);
+        sleep(3000);
         driver.quit();
     }
 
