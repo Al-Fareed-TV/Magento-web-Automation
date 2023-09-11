@@ -23,13 +23,12 @@ public class LumaTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login();
     }
-    @Test(priority = 1)
+    @Test
     public void testSearchProduct() {
         SearchProduct searchProduct = new SearchProduct(driver);
         int countOfListedProducts = searchProduct.verifyListOfSearchElements("shirt");
         Assert.assertEquals(countOfListedProducts, 5);
     }
-
 
     @Test
     public void addToCartTest() {
@@ -52,8 +51,6 @@ public class LumaTest {
         checkoutPage.placeOrder();
     }
 
-
-
     @Test
     public void testUserAccountPage() throws InterruptedException {
         UserAccountPage userAccountPage = new UserAccountPage(driver);
@@ -67,6 +64,12 @@ public class LumaTest {
         WishList wishList = new WishList(driver);
         int countOfItemsInWishList = wishList.verifyWishList();
         Assert.assertEquals(countOfItemsInWishList, 1);
+    }
+
+    @Test
+    public void testFilterProduct(){
+        FilterProduct filterProduct = new FilterProduct(driver);
+        filterProduct.filterPage();
     }
 
     @AfterClass

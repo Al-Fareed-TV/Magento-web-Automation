@@ -41,4 +41,5 @@ public class PageActions {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView()", element);
     }
+
 }

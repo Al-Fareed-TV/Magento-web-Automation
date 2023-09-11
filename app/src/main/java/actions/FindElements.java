@@ -33,4 +33,5 @@ public class FindElements {
     public List<WebElement> findListOfElementsByCSS(String cssLocator){
         return driver.findElements(By.cssSelector(cssLocator));
     }
+
 }

@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85b444b0-3eb5-45a4-950b-57ad2ae30384" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/FilterProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/magento/last/five/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/CheckoutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/magento/last/five/ConfirmOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/ConfirmOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/actions/FindElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/actions/FindElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/actions/PageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/actions/PageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/magento/last/five/WishList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/WishList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/magento/last/five/LumaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/magento/last/five/LumaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +74,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.LumaTest.testWishListPage">
-    <configuration name="LumaTest.testCheckoutPage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LumaTest">
+    <configuration name="LumaTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -86,7 +88,31 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;magento.last.five.LumaTest.testCheckoutPage&quot;" />
+            <option value="&quot;magento.last.five.LumaTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LumaTest.testFilterProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;magento.last.five.LumaTest.testFilterProduct&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -169,37 +195,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LumaTest.verifyCount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;magento.last.five.LumaTest.verifyCount&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LumaTest" />
+        <item itemvalue="Gradle.LumaTest.testFilterProduct" />
         <item itemvalue="Gradle.LumaTest.testWishListPage" />
         <item itemvalue="Gradle.LumaTest.testUserAccountPage" />
         <item itemvalue="Gradle.LumaTest.testSearchProduct" />
-        <item itemvalue="Gradle.LumaTest.testCheckoutPage" />
-        <item itemvalue="Gradle.LumaTest.verifyCount" />
       </list>
     </recent_temporary>
   </component>

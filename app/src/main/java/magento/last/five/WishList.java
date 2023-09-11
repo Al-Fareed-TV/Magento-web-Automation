@@ -31,7 +31,6 @@ public class WishList {
         action.clickElement(wishListOption);
     }
     public int verifyWishList(){
-//        addToWishList();
         goToWishList();
         Boolean titleName = pageWaits.waitForTitleToBeChanged("My Wish List");
         if(titleName){
