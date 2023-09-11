@@ -65,6 +65,14 @@ public class LumaTest{
         Assert.assertEquals(countOfListedProducts,5);
     }
 
+    @Test
+    public void testUserAccountPage()throws InterruptedException{
+        loginTest();
+        UserAccountPage userAccountPage = new UserAccountPage(driver);
+        userAccountPage.editProfile();
+        String items = userAccountPage.myOrders();
+        Assert.assertEquals(items,"1 Item");
+    }
     @AfterClass
     public void tearDown() throws InterruptedException {
         sleep(3000);

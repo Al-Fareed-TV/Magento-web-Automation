@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85b444b0-3eb5-45a4-950b-57ad2ae30384" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/SearchProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/UserAccountPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/actions/PageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/actions/PageActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/magento/last/five/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/CheckoutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/magento/last/five/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/magento/last/five/OrderProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/magento/last/five/OrderProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/magento/last/five/LumaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/magento/last/five/LumaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,31 +70,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.LumaTest.testSearchProduct">
-    <configuration name="LumaTest.AddToCart" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;magento.last.five.LumaTest.AddToCart&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.LumaTest.testUserAccountPage">
     <configuration name="LumaTest.testCheckout" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -120,7 +92,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="LumaTest.testSearchProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -144,7 +115,29 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LumaTest.testUserAccountPage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;magento.last.five.LumaTest.testUserAccountPage&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="LumaTest.testWishListPage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -168,7 +161,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="LumaTest.verifyCount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -192,16 +184,15 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LumaTest.testUserAccountPage" />
         <item itemvalue="Gradle.LumaTest.testSearchProduct" />
         <item itemvalue="Gradle.LumaTest.testWishListPage" />
         <item itemvalue="Gradle.LumaTest.verifyCount" />
         <item itemvalue="Gradle.LumaTest.testCheckout" />
-        <item itemvalue="Gradle.LumaTest.AddToCart" />
       </list>
     </recent_temporary>
   </component>
