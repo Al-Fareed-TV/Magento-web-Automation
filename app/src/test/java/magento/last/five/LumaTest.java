@@ -23,12 +23,19 @@ public class LumaTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login();
     }
+    @Test(priority = 1)
+    public void testSearchProduct() {
+        SearchProduct searchProduct = new SearchProduct(driver);
+        int countOfListedProducts = searchProduct.verifyListOfSearchElements("shirt");
+        Assert.assertEquals(countOfListedProducts, 5);
+    }
 
-    int initialCountOfCart = 0;
+
     @Test
     public void addToCartTest() {
+        loginTest();
         OrderProduct order = new OrderProduct(driver);
-        initialCountOfCart = order.AddToCart();
+        int initialCountOfCart  = order.AddToCart();
         System.out.println("Initial count of cart : " + initialCountOfCart);
     }
 
@@ -36,21 +43,17 @@ public class LumaTest {
     public void verifyCount() throws InterruptedException {
         ConfirmOrder confirmOrder = new ConfirmOrder(driver);
         int count = confirmOrder.checkCart();
-        Assert.assertEquals(count, (initialCountOfCart + 2));
+        Assert.assertEquals(count, 2);
     }
 
     @Test
     public void testCheckoutPage() throws InterruptedException {
-        verifyCount();
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.placeOrder();
     }
-    @Test
-    public void testSearchProduct() {
-        SearchProduct searchProduct = new SearchProduct(driver);
-        int countOfListedProducts = searchProduct.verifyListOfSearchElements("shirt");
-        Assert.assertEquals(countOfListedProducts, 5);
-    }
+
+
+
     @Test
     public void testUserAccountPage() throws InterruptedException {
         UserAccountPage userAccountPage = new UserAccountPage(driver);
@@ -65,6 +68,7 @@ public class LumaTest {
         int countOfItemsInWishList = wishList.verifyWishList();
         Assert.assertEquals(countOfItemsInWishList, 1);
     }
+
     @AfterClass
     public void tearDown() {
         driver.quit();

@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 public class CheckoutPage {
     private WebDriver driver = null;
 
@@ -19,12 +21,15 @@ public class CheckoutPage {
     PageWaits pageWaits = PageWaits.getPageWaitsObject(driver);
     FindElements elements = FindElements.getInstance(driver);
 
-    private void proceedToCheckout(){
+    private void proceedToCheckout() throws InterruptedException {
+        sleep(4000);
+        WebElement cartButton = pageWaits.waitUntilElementFoundByCSS("body > div.page-wrapper > header > div.header.content > div.minicart-wrapper > a");
+        action.clickElement(cartButton);
         WebElement proceedToCheckoutButton = pageWaits.waitUntilElementFoundByCSS("#top-cart-btn-checkout");
         action.clickElement(proceedToCheckoutButton);
     }
     public void fillShippingAddress(){
-        proceedToCheckout();
+//        proceedToCheckout();
         WebElement address = pageWaits.waitUntilElementFoundByXPath("//*[@id=\"N0NK716\"]");
         action.type(address,"any address");
 
@@ -41,17 +46,9 @@ public class CheckoutPage {
         dropdown.selectByValue("Karnataka");
 
     }
-    public void placeOrder(){
+    public void placeOrder() throws InterruptedException {
         proceedToCheckout();
         pageWaits.waitForTitleToBeChanged("Checkout");
-        WebElement radioButton = pageWaits.waitUntilElementFoundByXPath("document.querySelector(\"#checkout-shipping-method-load > table > tbody > tr > td:nth-child(1) > input\")");
-        action.clickElement(radioButton);
-
-        WebElement nextButton = pageWaits.waitUntilElementFoundByXPath("//*[@id=\"shipping-method-buttons-container\"]/div/button/span");
-        action.clickElement(nextButton);
-
-        WebElement proceedButton = pageWaits.waitUntilElementFoundByXPath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button/span");
-        action.clickElement(proceedButton);
     }
 
 }
