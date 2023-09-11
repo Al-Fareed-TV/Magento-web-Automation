@@ -24,7 +24,7 @@ public class WishList {
     }
     private void addToWishList(){
         selectProduct();
-        WebElement wishListButton = elements.findElementByCSS("#maincontent > div.columns > div > div.product-info-main > div.product-social-links > div > a.action.towishlist");
+        WebElement wishListButton = pageWaits.waitUntilElementFoundByPartialLink("ADD TO WISH LIST");
         action.clickElement(wishListButton);
     }
     public int verifyWishList(){
