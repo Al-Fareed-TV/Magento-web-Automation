@@ -3,11 +3,8 @@ package magento.last.five;
 import actions.FindElements;
 import actions.PageActions;
 import driver.PageWaits;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class SearchProduct {
     private WebDriver driver = null;
@@ -28,11 +25,10 @@ public class SearchProduct {
 
     public int verifyListOfSearchElements(String productName) {
         searchProduct(productName);
-        Boolean titleToBeChanged = pageWaits.waitForTitleToBeChanged("Search results for: '" + productName + "'");
-        if (titleToBeChanged) {
-            WebElement listOfProducts = pageWaits.waitUntilElementFoundByCSS("#toolbar-amount > span");
-            return Integer.parseInt(listOfProducts.getText());
-        }
-        return 0;
+        pageWaits.waitForTitleToBeChanged("Search results for: '" + productName + "'");
+
+        WebElement listOfProducts = pageWaits.waitUntilElementFoundByCSS("#toolbar-amount > span");
+        return Integer.parseInt(listOfProducts.getText());
+
     }
 }
