@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class CheckoutPage {
     private WebDriver driver = null;
 
@@ -38,6 +40,18 @@ public class CheckoutPage {
         dropdown = new Select(stateDropdown);
         dropdown.selectByValue("Karnataka");
 
+    }
+    public void placeOrder(){
+        proceedToCheckout();
+        pageWaits.waitForTitleToBeChanged("Checkout");
+        WebElement radioButton = pageWaits.waitUntilElementFoundByXPath("document.querySelector(\"#checkout-shipping-method-load > table > tbody > tr > td:nth-child(1) > input\")");
+        action.clickElement(radioButton);
+
+        WebElement nextButton = pageWaits.waitUntilElementFoundByXPath("//*[@id=\"shipping-method-buttons-container\"]/div/button/span");
+        action.clickElement(nextButton);
+
+        WebElement proceedButton = pageWaits.waitUntilElementFoundByXPath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button/span");
+        action.clickElement(proceedButton);
     }
 
 }

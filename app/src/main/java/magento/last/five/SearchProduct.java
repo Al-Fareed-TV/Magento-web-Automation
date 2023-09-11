@@ -21,7 +21,7 @@ public class SearchProduct {
     FindElements elements = FindElements.getInstance(driver);
 
     private void searchProduct(String productName) {
-        WebElement searchBar = pageWaits.waitUntilElementFoundByID("search");
+        WebElement searchBar = pageWaits.waitUntilElementFoundByCSS("#search");
         action.type(searchBar, productName);
         action.enterKey(searchBar);
     }

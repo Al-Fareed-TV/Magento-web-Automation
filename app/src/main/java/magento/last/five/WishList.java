@@ -16,7 +16,6 @@ public class WishList {
     }
     PageActions action = PageActions.getActionsObject();
     PageWaits pageWaits = PageWaits.getPageWaitsObject(driver);
-    FindElements elements = FindElements.getInstance(driver);
     private void selectProduct(){
         WebElement product = pageWaits.waitUntilElementFoundByCSS("#maincontent > div.columns > div > div.widget.block.block-static-block > div.block.widget.block-products-list.grid > div > div > ol > li:nth-child(1) > div > a > span > span > img");
         action.scrollWindow(driver, product);
@@ -27,8 +26,13 @@ public class WishList {
         WebElement wishListButton = pageWaits.waitUntilElementFoundByPartialLink("ADD TO WISH LIST");
         action.clickElement(wishListButton);
     }
+    public void goToWishList(){
+        WebElement wishListOption = pageWaits.waitUntilElementFoundByCSS("#block-collapsible-nav > ul > li:nth-child(4) > a");
+        action.clickElement(wishListOption);
+    }
     public int verifyWishList(){
-        addToWishList();
+//        addToWishList();
+        goToWishList();
         Boolean titleName = pageWaits.waitForTitleToBeChanged("My Wish List");
         if(titleName){
             List<WebElement> element = pageWaits.waitUntilListOfElementFoundByCss("#wishlist-view-form > div.products-grid.wishlist > ol");

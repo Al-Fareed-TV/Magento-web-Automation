@@ -25,20 +25,18 @@ public class LumaTest {
     }
 
     int initialCountOfCart = 0;
-
+    @Test
     public void addToCartTest() {
         loginTest();
         OrderProduct order = new OrderProduct(driver);
         initialCountOfCart = order.AddToCart();
+        System.out.println("Initial count of cart : " + initialCountOfCart);
     }
 
     @Test
     public void verifyCount() throws InterruptedException {
-        addToCartTest();
-        System.out.println("Initial count : " + initialCountOfCart);
         ConfirmOrder confirmOrder = new ConfirmOrder(driver);
         int count = confirmOrder.checkCart();
-        System.out.println("Present count of cart : " + count);
         Assert.assertEquals(count, (initialCountOfCart + 2));
     }
 
@@ -46,7 +44,7 @@ public class LumaTest {
     public void testCheckoutPage() throws InterruptedException {
         verifyCount();
         CheckoutPage checkoutPage = new CheckoutPage(driver);
-        checkoutPage.fillShippingAddress();
+        checkoutPage.placeOrder();
     }
 
     @Test
@@ -54,12 +52,11 @@ public class LumaTest {
         UserAccountPage userAccountPage = new UserAccountPage(driver);
         userAccountPage.editProfile();
         String items = userAccountPage.myOrders();
-        Assert.assertEquals(items, "1 Item");
+        Assert.assertEquals(items, "2 Item(s)");
     }
 
     @Test
     public void testWishListPage() {
-        loginTest();
         WishList wishList = new WishList(driver);
         int countOfItemsInWishList = wishList.verifyWishList();
         Assert.assertEquals(countOfItemsInWishList, 1);
